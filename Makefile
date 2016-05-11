@@ -11,7 +11,8 @@ NPM_PACKAGES = 							\
 
 # LESS and CSS
 LESS 		 	= style.less
-LESS_OPTIONS 	= --strict-imports --include-path=modules/
+LESS_MODULES	= modules/
+LESS_OPTIONS 	= --strict-imports --include-path=$(LESS_MODULES)
 CSSLINT_OPTIONS = --quiet
 FONT_AWESOME 	= modules/font-awesome/fonts/
 
