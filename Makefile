@@ -77,7 +77,7 @@ less: prepare-build
 	lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
 	lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
 	cp build/css/style.min.css htdocs/css/style.min.css
-	cp build/css/style.min.css ../htdocs/css/style.min.css
+	if [ -d ../htdocs/css/ ]; then cp build/css/style.min.css ../htdocs/css/style.min.css; fi
 
 
 
