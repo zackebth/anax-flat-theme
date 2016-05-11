@@ -22,6 +22,11 @@ ERROR_COLOR=\033[31;01m
 WARN_COLOR=\033[33;01m
 ACTION=$(TARGET_COLOR)--> 
 
+# Define a newline
+define \n
+
+endef
+
 
 
 # target: help - Displays help.
@@ -35,10 +40,13 @@ help:
 
 
 
+
+
 # target: npm-config  - Configure where the npm global packages goes.
 # target: npm-install - Install npm global packages.
 # target: npm-update  - Update npm global packages.
-.PHONY: npm-config npm-installl npm-update
+# target: npm-version - Display version for each package.
+.PHONY: npm-config npm-installl npm-update npm-version
 npm-config:
 	npm config set prefix '~/.npm-packages'
 
@@ -47,6 +55,10 @@ npm-install:
 
 npm-update: 
 	npm -g update
+
+npm-version:
+	lessc --version
+	csslint --version
 
 
 
