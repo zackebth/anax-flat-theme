@@ -3,16 +3,17 @@
 #
 
 
-# NPM packages needed
+# NPM packages
 NPM_PACKAGES = 							\
 	csslint								\
 	less								\
 	less-plugin-clean-css				\
 
-# Theme
-LESS 		 = style_anax-flat.less
-LESS_OPTIONS = --strict-imports --include-path=modules/
-FONT_AWESOME = modules/font-awesome/fonts/
+# LESS and CSS
+LESS 		 	= style.less
+LESS_OPTIONS 	= --strict-imports --include-path=modules/
+CSSLINT_OPTIONS = --quiet
+FONT_AWESOME 	= modules/font-awesome/fonts/
 
 # Colors
 NO_COLOR=\033[0m
@@ -37,8 +38,6 @@ help:
 	@echo " make [target] ..."
 	@echo "target:"
 	@egrep "^# target:" Makefile | sed 's/# target: / /g'
-
-
 
 
 
@@ -78,6 +77,7 @@ less: prepare-build
 	lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
 	lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
 	cp build/css/style.min.css htdocs/css/style.min.css
+	cp build/css/style.min.css ../htdocs/css/style.min.css
 
 
 
@@ -86,7 +86,7 @@ less: prepare-build
 less-lint: less
 	@echo "$(ACTION)Linting LESS/CSS stylesheet$(NO_COLOR)"
 	lessc --lint $(LESS_OPTIONS) $(LESS) > build/lint/style.less
-	- csslint build/css/style.css > build/lint/style.css
+	- csslint $(CSSLINT_OPTIONS) build/css/style.css > build/lint/style.css
 	ls -l build/lint/
 
 
