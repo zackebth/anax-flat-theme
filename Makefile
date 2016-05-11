@@ -24,11 +24,6 @@ ERROR_COLOR=\033[31;01m
 WARN_COLOR=\033[33;01m
 ACTION=$(TARGET_COLOR)--> 
 
-# Define a newline
-define \n
-
-endef
-
 
 
 # target: help - Displays help.
@@ -79,6 +74,7 @@ less: prepare-build
 	lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
 	cp build/css/style.min.css htdocs/css/style.min.css
 	if [ -d ../htdocs/css/ ]; then cp build/css/style.min.css ../htdocs/css/style.min.css; fi
+	if [ -d ../htdocs/ ]; then rsync -a js/ ../htdocs/js/; fi
 
 
 
