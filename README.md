@@ -4,3 +4,11 @@
 [![Build Status](https://travis-ci.org/canax/anax-flat-theme.svg?branch=master)](https://travis-ci.org/canax/anax-flat-theme)
 
 Base for a theme to Anax Flat
+
+
+
+##Revisions
+
+v0.1.1* (2016-06-07)
+
+* Updates after testing.
