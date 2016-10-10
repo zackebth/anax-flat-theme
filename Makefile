@@ -65,8 +65,8 @@ clean-all: clean
 .PHONY: less
 less: prepare-build
 	@echo $(call HELPTEXT,$@)
-	lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
-	lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
+	$(NPMBIN)/lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
+	$(NPMBIN)/lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
 	cp build/css/style*.css htdocs/css/
 
 
@@ -84,7 +84,7 @@ less-install: less
 .PHONY: less-lint
 less-lint: less
 	@echo $(call HELPTEXT,$@)
-	lessc --lint $(LESS_OPTIONS) $(LESS) > build/lint/style.less
+	$(NPMBIN)/lessc --lint $(LESS_OPTIONS) $(LESS) > build/lint/style.less
 	- csslint $(CSSLINT_OPTIONS) build/css/style.css > build/lint/style.css
 	ls -l build/lint/
 
