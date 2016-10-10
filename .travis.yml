@@ -31,12 +31,12 @@ before_script:
 
     # Create a build directory for output
     # Store all files in your own bin
-    - install --directory build/bin
-    - install --directory build/webroot
-    - export PATH=$PATH:$PWD/build/bin/
+    #- install --directory build/bin
+    #- install --directory build/webroot
+    #- export PATH=$PATH:$PWD/build/bin/
 
     # Install validation tools
-    - npm install -g htmlhint csslint jshint jscs jsonlint js-yaml html-minifier@0.8.0 clean-css uglify-js
+    #- npm install -g htmlhint csslint jshint jscs jsonlint js-yaml html-minifier@0.8.0 clean-css uglify-js
 
     # Install using makefile
     - make npm-install
@@ -45,19 +45,19 @@ before_script:
 
 script:
     # Check versions of validation tools
-    - node --version
-    - npm --version
+    #- node --version
+    #- npm --version
     
-    - htmlhint --version
-    - csslint --version
-    - jscs --version
-    - jshint --version
+    #- htmlhint --version
+    #- csslint --version
+    #- jscs --version
+    #- jshint --version
     #- jsonlint --version
-    - js-yaml --version
+    #- js-yaml --version
     
-    - html-minifier --version
-    - cleancss --version
-    - uglifyjs --version
+    #- html-minifier --version
+    #- cleancss --version
+    #- uglifyjs --version
     
     # Run tests
     - make npm-version
