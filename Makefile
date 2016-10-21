@@ -84,7 +84,7 @@ less-install: less
 less-lint: less
 	@$(call HELPTEXT,$@)
 	$(NPMBIN)/lessc --lint $(LESS_OPTIONS) $(LESS) > build/lint/style.less
-	- csslint $(CSSLINT_OPTIONS) build/css/style.css > build/lint/style.css
+	- $(NPMBIN)/csslint $(CSSLINT_OPTIONS) build/css/style.css > build/lint/style.css
 	ls -l build/lint/
 
 
