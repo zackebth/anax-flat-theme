@@ -1,6 +1,12 @@
 #Revisions
 
 
+v0.1.7 (2016-11-01)
+-------------------------------
+
+* Makefile to work on Mac, Linux, Cygwin using colors and help.
+
+
 v0.1.6 (2016-10-21)
 -------------------------------
 
