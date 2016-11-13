@@ -1,6 +1,12 @@
 #Revisions
 
 
+v0.1.8 (2016-11-13)
+-------------------------------
+
+* Makefile adapted to compile several target stylesheets.
+
+
 v0.1.7 (2016-11-01)
 -------------------------------
 
