@@ -3,30 +3,66 @@
 */
 @import url(modules.less);
 
-.inner-wrap-header {
-    background-color: #333;
+@fontSizeH1: 2.375em;
+@colorH1BorderBottom: #333;
+@borderSizeH1: 1px;
+
+@fontFamilyHeadings:  @fontFamilyComic;
+@fontFamilyBody:      @fontFamilyMonospace;
+@fontFamilyCode:      @fontFamilyCourier;
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: @magicNumber;
+    margin-bottom: @magicNumber;
+    font-family: @fontFamilyHeadings;
 }
 
-.inner-wrap-header a{
+h1 {
+    .fontSize(@fontSizeH1);
+    font-weight: normal;
+
+    border-bottom: @borderSizeH1 solid @colorH1BorderBottom;
+    margin-bottom: @magicNumber - @borderSizeH1;
+    // If header below h1, then assume larger margin top
+    & ~ h1,
+    & ~ h2,
+    & ~ h3,
+    & ~ h4,
+    & ~ h5,
+    & ~ h6,
+     {
+        margin-top: @magicNumber * 2;
+    }
+    // Single margin when subheader follows directly
+    // Single margin when subheader follows directly
+    & + h2 {
+        margin-top: @magicNumber;
+    }
+}
+
+body {
+    background-color: #555;
+    font-family: @fontFamilyBody;
+
+}
+
+.site-header {
+    background-color: #444;
+}
+
+.row {
+    background-color: #333;
     color: #777;
 }
-.inner-wrap-header a:hover{
-    color: #555;
-}
 
-.inner-wrap-footer {
-    background-color: #333;
-    color: #C2C2C2;
-}
 
-.inner-wrap-footer a {
+a {
     color: #777;
 }
-.inner-wrap-footer a:hover {
+
+a:hover {
     color: #555;
 }
-
-
 
 /** --------------------------------------------------------------
  *  Logo images
@@ -35,6 +71,10 @@
     position: absolute;
     top: 70px;
     left: -140px;
+}
+
+.site-logo-text {
+    font-size: 1em;
 }
 
 .site-logo-text-icon {
@@ -60,7 +100,7 @@
 .rm-desktop li {
 }
 .rm-desktop li:hover {
-    border-bottom: 2px solid #777;
+    border-bottom: 2px solid #333;
 }
 .rm-desktop li a {
     color: #777;
@@ -69,11 +109,7 @@
     text-decoration: none;
     color: #777;
 }
-
-.rm-menu-button {
-    background-color: #777;
-}
-@navbarItemBgColor: #333;
+@navbarItemBgColor: #444;
 
 
 // Size each item in the header
