@@ -201,24 +201,27 @@ body {
 .route-grid .sidebar {
     .column(4);
 }
-
+.route-images .main {
+    .column(20);
+    .push(2);
+}
 /**
  * Style for the showGrid site typography
  */
 
 .route-typography {
-    .inner-wrap {
+    .inner-wrap-main {
         @gridWidth: 950px;
-        @gridImage: "../img/grid/horisontal-grid-24.png";
+        @typoImage: "../img/grid/horisontal-grid-24.png";
         //@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
 
         .grid(@gridWidth);
-        .showGrid(@gridWidth, @gridImage);
+        .showTypo(@gridWidth, @typoImage);
 
         &.inner-wrap-header {
             @gridWidth: 100%;
             .grid(@gridWidth);
-            //.showGrid(@gridWidth, @gridImage);
+            .showTypo(@gridWidth, @typoImage);
         }
     }
 }

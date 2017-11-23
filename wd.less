@@ -1,0 +1,147 @@
+/**
+* Anax Flat theme.
+*/
+@import url(modules.less);
+
+body {
+    background-color: #555;
+}
+
+.site-header {
+    background-color: #444;
+}
+
+.row {
+    background-color: #333;
+    color: #777;
+}
+
+.inner-wrap-main {
+    box-shadow: 0px 10px 50px red;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: red;
+}
+
+a {
+    color: #777;
+}
+
+a:hover {
+    color: #555;
+}
+
+/** --------------------------------------------------------------
+ *  Logo images
+ */
+.logo-1 {
+    position: absolute;
+    top: 70px;
+    left: -140px;
+}
+
+.site-logo-text-icon {
+    img {
+        vertical-align: bottom;
+    }
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+
+// Size of max navbar button
+.rm-max .rm-small .rm-button {
+    font-size: 2em;
+}
+
+@maxButtonFontSize: 2em;
+
+// Style navbar
+.rm-desktop li {
+    box-shadow: 0px 10px 10px red;
+}
+.rm-desktop li:hover {
+    border-bottom: 2px solid #333;
+}
+.rm-desktop li a {
+    color: #777;
+}
+.rm-desktop li a:hover {
+    text-decoration: none;
+    color: #777;
+}
+@navbarItemBgColor: #444;
+
+
+// Size each item in the header
+.site-logo-text,
+.navbar2,
+.profile {
+    float: left;
+}
+
+
+.site-header {
+    height: 80px;
+}
+
+// Site title
+.site-logo-text {
+    font-size: 2em;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+/** --------------------------------------------------------------
+ *  Responsive design
+ */
+img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .site-logo-text {
+        width: 40%;
+    }
+
+    .navbar2 {
+        width: 50%;
+    }
+
+    .profile {
+        width: 10%;
+    }
+
+}
+
+
+@media screen and (max-width: 750px) {
+    .sidebar {
+        //width: 100%;
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .footer-column {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 560px) {
+     .site-logo-text {
+         width: 90%;
+     }
+
+     .navbar2 {
+         display: none;
+     }
+ }
