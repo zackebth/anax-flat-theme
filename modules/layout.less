@@ -51,16 +51,30 @@ body {
     @gridWidth: 950px;
     @gridImage:
     "../img/grid/grid950x24x30x10-nomargin.png";
+    @typoImage:
+    "../img/grid/horisontal-grid-24.png";
     //@gridImage:
     //"../img/grid/grid940x12x60x20-nomargin.png";
     .grid(@gridWidth);
     //.showGrid(@gridWidth, @gridImage);
+    html.vgrid & {
+        .showGrid(@gridWidth, @gridImage);
+    }
+    &.inner-wrap-main {
+        html.hgrid & {
+            .showTypo(@gridWidth, @typoImage);
+        }
+    }
 
 
     &.inner-wrap-header {
         @gridWidth: 100%;
         .grid(@gridWidth);
         //.showGrid(@gridWidth, @gridImage);
+        html.vgrid & {
+            .showGrid(@gridWidth, @gridImage);
+        }
+
     }
     &.inner-wrap-footer {
         @gridWidth: 100%;
@@ -213,9 +227,9 @@ body {
     .inner-wrap-main {
         @gridWidth: 950px;
         @typoImage: "../img/grid/horisontal-grid-24.png";
-        //@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
+        //@typoImage: "../img/grid/grid940x12x60x20-nomargin.png";
 
-        .grid(@gridWidth);
+        //.grid(@gridWidth);
         .showTypo(@gridWidth, @typoImage);
 
         &.inner-wrap-header {
